@@ -11,10 +11,14 @@ class App extends Component {
   
   onUpload = files => {
     console.log(files);
+    const fileUrl = URL.createObjectURL(files[0]);
     const audioElement = document.createElement("AUDIO");
+    audioElement.autoplay = true;
+    audioElement.src = fileUrl;
     // document.body.insertBefore(audioElement, document.getElementById('after-audio'));
     const audioWrapper = document.getElementById('audio-wrapper');
     audioWrapper.insertBefore(audioElement, document.getElementById('after-audio'));
+    audioElement.load();
   };
   
   render() {
