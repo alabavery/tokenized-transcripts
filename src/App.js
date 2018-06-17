@@ -11,23 +11,30 @@ class App extends Component {
   
   onUpload = files => {
     console.log(files);
-    const audioiElement = document.createElement("AUDIO");
+    const audioElement = document.createElement("AUDIO");
+    // document.body.insertBefore(audioElement, document.getElementById('after-audio'));
+    const audioWrapper = document.getElementById('audio-wrapper');
+    audioWrapper.insertBefore(audioElement, document.getElementById('after-audio'));
   };
   
   render() {
     return (
       <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
         <button
           type="primary"
           onClick={() => {this.dropzone.current.open();}}>
           Click
         </button>
+        <Dropzone accept=".mp3,.wav" ref={this.dropzone} style={{}} onDrop={this.onUpload} />
 
-        <Dropzone accept=".mp3,.wav" ref={this.dropzone} style={{ display: 'none' }} onDrop={this.onUpload} />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+        <div id="audio-wrapper">
+          <div id="after-audio"></div>
+        </div>
+
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
