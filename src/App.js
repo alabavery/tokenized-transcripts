@@ -13,8 +13,8 @@ class App extends Component {
     console.log(files);
     const fileUrl = URL.createObjectURL(files[0]);
     const audioElement = document.createElement("AUDIO");
-    audioElement.autoplay = true;
     audioElement.src = fileUrl;
+    audioElement.controls = true;
     // document.body.insertBefore(audioElement, document.getElementById('after-audio'));
     const audioWrapper = document.getElementById('audio-wrapper');
     audioWrapper.insertBefore(audioElement, document.getElementById('after-audio'));
