@@ -17,7 +17,14 @@ export default class Tokenizer extends React.Component {
         };
       };
     }
-    state = { currentPhraseIndex: 0 };
+    state = {
+      phrases: ['No phrases added'],
+      currentPhraseIndex: 0,
+    };
+
+    onComponentDidMount() {
+      console.log("mounted");
+    }
 
     onForwardPress = () => {
       if (this.state.currentPhraseIndex < this.props.phrases.length - 1) {
@@ -38,7 +45,7 @@ export default class Tokenizer extends React.Component {
     render() {
       return (
         <PhraseDisplay
-        phrase={this.props.phrases[this.state.currentPhraseIndex]}
+        phrase={this.state.phrases[this.state.currentPhraseIndex]}
         />
       );
     }
