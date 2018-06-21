@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
-import logo from './raspberrypilogo.png';
 import './App.css';
 import Tokenizer from './components/Tokenizer';
-import AudioUpload from './components/AudioUpload';
+import Practice from './components/Practice';
+import Settings from './components/Settings';
 
-const text = "Here is the first sentence.  Here is the next sentence.";
+const text = "Donc je suis avec Mina. Mina, tu es étudiante et en même temps, tu travailles comme équipière " +
+  "polyvalente (1) à Burger King. Est-ce que tu peux nous dire un peu comment tu le vis, s’il te plaît?\n" +
+  "M : Bah, déjà (2), je le vis très bien, parce que c’est… Il y a une part de responsabilité. Je me sens autonome " +
+  "pour travailler et payer mes études en même temps. Je dépends pas (3) de ma famille.\n" +
+  "G : D’accord.\n" +
+  "M : Et… Voilà.";
 
 class App extends Component {
+  state = { show: 'tokenizer' };
+
+
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+        <header>
+          <ul id="navbar">
+            <li className="navbar-item" onClick={() => this.setState({ show: 'tokenizer' })}>Make new tokens</li>
+            <li className="navbar-item" onClick={() => this.setState({ show: 'practice' })}>Practice</li>
+            <li className="navbar-item" onClick={() => this.setState({ show: 'settings' })}>Settings</li>
+          </ul>
         </header>
-        <AudioUpload />
-        <Tokenizer text={text} />
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {this.state.show === 'tokenizer' ? <Tokenizer text={text} /> : null }
+        {this.state.show === 'practice' ? <Practice /> : null }
+        {this.state.show === 'settings' ? <Settings /> : null }
       </div>
     );
   }

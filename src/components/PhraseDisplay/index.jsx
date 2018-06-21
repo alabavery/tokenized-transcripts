@@ -4,7 +4,7 @@ import './styles.css';
 
 const PhraseDisplay = props => {
   return (
-    <div className="phrase-display">
+    <div id="phrase-display">
       {props.phrase}
     </div>
   );

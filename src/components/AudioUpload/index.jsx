@@ -10,13 +10,9 @@ export default class AudioUpload extends React.Component {
   onUpload = files => {
     console.log(files);
     const fileUrl = URL.createObjectURL(files[0]);
-    const audioElement = document.createElement("AUDIO");
+    const audioElement = document.getElementById('audio');
     audioElement.src = fileUrl;
-    audioElement.controls = true;
-    // document.body.insertBefore(audioElement, document.getElementById('after-audio'));
-    const audioWrapper = document.getElementById('audio-wrapper');
-    audioWrapper.insertBefore(audioElement, document.getElementById('after-audio'));
-    audioElement.load();
+    this.props.onAudioUpload(audioElement);
   };
 
   render() {
@@ -25,13 +21,13 @@ export default class AudioUpload extends React.Component {
         <button
           type="primary"
           onClick={() => {this.dropzone.current.open();}}>
-          Click
+          Upload Audio
         </button>
         <Dropzone accept=".mp3,.wav" ref={this.dropzone} style={{}} onDrop={this.onUpload} />
 
-        <div id="audio-wrapper">
-          <div id="after-audio"></div>
-        </div>
+        <audio controls id="audio">
+          <source src="" type="audio/mp3" />
+        </audio>
       </div>
     );
   }

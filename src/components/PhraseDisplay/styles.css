@@ -1,3 +1,5 @@
-.phrase-display {
-  background-color: red;
+#phrase-display {
+  background-color: #c49ae2;
+  padding: 3rem;
+  margin: 2rem;
 }
