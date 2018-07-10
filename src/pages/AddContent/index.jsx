@@ -1,7 +1,6 @@
 import React from 'react';
 import AudioUpload from '../../components/AudioUpload';
 import AddTranscript from '../../components/AddTranscript';
-import DisplayTokenizedTranscript from '../../components/DisplayTokenizedTranscript';
 import AddContentConfirmModal from '../../components/AddContentConfirmModal';
 import './styles.css';
 
@@ -9,10 +8,9 @@ export default class AddContent extends React.Component {
   state = {
     transcriptTokens: [],
     audio: null,
-    addTranscriptOpen: true,
-    displayTokensOpen: false,
-    confirmModalOpen: false,
-    audioFileName: null
+    audioFileName: null,
+
+    displaying: ['audio', 'transcript', 'confirm'],
   };
 
   handleSave = () => {
@@ -33,20 +31,16 @@ export default class AddContent extends React.Component {
   };
 
   render() {
+    const { displaying } = this.state;
     return (
       <div className="add-content-container">
-        <AudioUpload afterUpload={audio => this.handleAudioUpload(audio)}/>
+        <AudioUpload open={displaying==='addAudio'} afterUpload={audio => this.handleAudioUpload(audio)}/>
         <AddTranscript
-          open={this.state.addTranscriptOpen}
+          open={displaying==='addTranscript'}
           afterGenerateTokens={tokens => this.handleTranscriptTokenGeneration(tokens)}
         />
-        <DisplayTokenizedTranscript
-          open={this.state.displayTokensOpen}
-          onConfirm={() => this.setState({ displayTokensOpen: false, addTranscriptOpen: true })}
-          tokens={this.state.transcriptTokens}
-        />
         <AddContentConfirmModal
-          open={this.state.confirmModalOpen}
+          open={displaying==='confirm'}
           audioFileName={this.state.audioFileName}
           onConfirm={this.handleSave}
         />

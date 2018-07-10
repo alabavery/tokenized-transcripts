@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="028ea765-e1a8-46c7-9e2f-412bd05449bd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/AddContentConfirmModal/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AddTranscript/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AddTranscript/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AudioDownload/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/AddContent/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/AddContent/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AudioUpload/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AudioUpload/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PhraseDisplay/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PhraseDisplay/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Practice/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Practice/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Settings/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tokenizer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Tokenizer/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tokenizer/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Tokenizer/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/raspberrypilogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddTranscript/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddTranscript/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AddContent/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AddContent/index.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,23 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/AddContent/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/AddTranscript/index.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+            <state relative-caret-position="184">
+              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -76,6 +46,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
               <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/AddTranscript/index.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -119,8 +101,8 @@
         <option value="$PROJECT_DIR$/src/pages/AddContent/styles.css" />
         <option value="$PROJECT_DIR$/src/components/AddTranscript/styles.css" />
         <option value="$PROJECT_DIR$/src/components/DisplayTokenizedTranscript/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/AddTranscript/index.jsx" />
         <option value="$PROJECT_DIR$/src/pages/AddContent/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/AddTranscript/index.jsx" />
       </list>
     </option>
   </component>
@@ -163,6 +145,13 @@
               <item name="AudioPracticeFrontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioPracticeFrontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioPracticeFrontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="AddTranscript" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AudioPracticeFrontend" type="b2602c69:ProjectViewProjectNode" />
@@ -244,12 +233,12 @@
       <workItem from="1530128797563" duration="4422000" />
       <workItem from="1531094803977" duration="2203000" />
       <workItem from="1531182650726" duration="164000" />
-      <workItem from="1531182989996" duration="3595000" />
+      <workItem from="1531182989996" duration="5273000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44844000" />
+    <option name="totallyTimeSpent" value="46522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -636,16 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddTranscript/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/DisplayTokenizedTranscript/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -658,8 +637,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/AddContent/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+        <state relative-caret-position="184">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddTranscript/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
