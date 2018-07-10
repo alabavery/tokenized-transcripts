@@ -1,7 +1,8 @@
 import React from 'react';
-import PhraseDisplay from '../PhraseDisplay';
-import AudioUpload from '../AudioUpload';
+import PhraseDisplay from '../../components/PhraseDisplay/index';
+import AudioDownload from '../../components/AudioDownload/index';
 import './styles.css';
+import api from '../../services/client';
 
 export default class Tokenizer extends React.Component {
     // static propTypes = {
@@ -31,6 +32,7 @@ export default class Tokenizer extends React.Component {
 
     constructor(props) {
       super(props);
+      this.audio = null;
       document.onkeydown = e => {
         const key = e.keyCode ? e.keyCode : e.which;
         if (key == 32) { // space
@@ -93,14 +95,16 @@ export default class Tokenizer extends React.Component {
     speedUpAudio = () => this.audio.playbackRate < 1.8 ? this.audio.playbackRate += 0.4 : null;
 
     static writeJson = tokens => {
-      document.getElementById('json-area').innerHTML = (JSON.stringify(tokens));
+      const json = JSON.stringify({hereIs: "some json"});
+      document.getElementById('json-area').innerHTML = (json);
+      api.saveTokens.post(json);
     };
 
     render() {
       return (
         <div>
+          <AudioDownload />
           <div id="audio-wrapper">
-            <AudioUpload onAudioUpload={audio => this.audio = audio} />
             <button onClick={this.slowDownAudio}>Slow Playback Rate</button>
             <button onClick={this.speedUpAudio}>Increase Playback Rate</button>
           </div>

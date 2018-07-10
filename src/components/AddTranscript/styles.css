@@ -1,0 +1,6 @@
+.transcript-input {
+    height: 20rem;
+    width: 20rem;
+    border-width: 0.5rem;
+    word-wrap: break-word;
+}

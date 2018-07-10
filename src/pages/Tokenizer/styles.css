@@ -1,11 +1,11 @@
 #audio-wrapper {
     padding: 3rem;
     margin: 3rem;
-    background-color: deepskyblue;
+    background-color: gray;
 }
 
 #json-area {
-    background-color: aquamarine;
+    background-color: gray;
     padding: 3rem;
     margin: 3rem;
 }

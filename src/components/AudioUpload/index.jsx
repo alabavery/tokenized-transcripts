@@ -1,18 +1,31 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
+import api from '../../services/client';
 
+/**
+ * This is a standalone button and will go in Settings page and on Tokenizer page.  It will just upload audio to the
+ * backend.
+ */
 export default class AudioUpload extends React.Component {
+  static propTypes = {
+    onUpload: PropTypes.func,
+  };
   constructor(props) {
     super(props);
     this.dropzone = React.createRef();
   }
 
+  static defaultProps = {
+    onUpload: () => undefined,
+  };
+
   onUpload = files => {
     console.log(files);
-    const fileUrl = URL.createObjectURL(files[0]);
-    const audioElement = document.getElementById('audio');
-    audioElement.src = fileUrl;
-    this.props.onAudioUpload(audioElement);
+    const formData = new FormData();
+    formData.append('track', files[0]);
+    api.saveAudio.post(formData);
+    this.props.onUpload(files[0]);
   };
 
   render() {
@@ -24,10 +37,6 @@ export default class AudioUpload extends React.Component {
           Upload Audio
         </button>
         <Dropzone accept=".mp3,.wav" ref={this.dropzone} style={{}} onDrop={this.onUpload} />
-
-        <audio controls id="audio">
-          <source src="" type="audio/mp3" />
-        </audio>
       </div>
     );
   }

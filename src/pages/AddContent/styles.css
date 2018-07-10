@@ -1,0 +1,11 @@
+.add-content-container {
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    height: 100vh;
+}
+
+#open-save-button {
+    width: 15%;
+    background-color: deepskyblue;
+}
