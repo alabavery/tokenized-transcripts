@@ -5,8 +5,10 @@ const AddContentConfirmModal = props => {
   if (props.open) {
     return (
       <div className="confirm-modal">
-        {props.audioFileName} <br />
-        {props.transcriptSnippet}
+        <h3>Upload audio and transcript phrases below?</h3>
+        Audio file name: {props.audioFileName} <br />
+        Transcript that begins: {props.transcriptSnippet}
+        <button onClick={props.onConfirm}>Confirm</button>
       </div>
     );
   }
@@ -15,14 +17,9 @@ const AddContentConfirmModal = props => {
 
 AddContentConfirmModal.propTypes = {
   open: PropTypes.bool.isRequired,
-  audioFileName: PropTypes.string,
-  transcriptSnippet: PropTypes.string,
+  audioFileName: PropTypes.string.isRequired,
+  transcriptSnippet: PropTypes.string.isRequired,
   onConfirm: PropTypes.func.isRequired,
-};
-
-AddContentConfirmModal.defaultProps = {
-  audioFileName: 'No Audio Passed',
-  transcriptSnippet: 'No transcript snippet passed',
 };
 
 export default AddContentConfirmModal;

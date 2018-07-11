@@ -1,20 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DisplayTokenizedTranscript from '../DisplayTokenizedTranscript';
+import FinalizeTokenizedTranscript from '../FinalizeTokenizedTranscript/index';
 import './styles.css';
 
 // where you paste transcripts into
 class AddTranscript extends React.Component {
+  static propTypes = {
+    open: PropTypes.bool.isRequired,
+    onConfirm: PropTypes.func.isRequired,
+  };
+
   constructor(props) {
     super(props);
-    this.state = { value: '', preliminaryTokens: [], addIsOpen: true, confirmIsOpen: false };
+    this.state = { value: '', preliminaryTokens: [], addIsOpen: true, finalizeIsOpen: false };
     this.handleChange = this.handleChange.bind(this);
     this.generateTokens = this.generateTokens.bind(this);
   }
 
   generateTokens(event) {
     const preliminaryTokens = this.state.value.split('.');
-    this.setState({ preliminaryTokens, addIsOpen: false, confirmIsOpen: true });
+    console.log(`\nset AddTranscript.state.preliminaryTokens... first token is ${preliminaryTokens[0]}`);
+    this.setState({ preliminaryTokens, addIsOpen: false, finalizeIsOpen: true });
     event.preventDefault();
   }
 
@@ -22,13 +28,13 @@ class AddTranscript extends React.Component {
     this.setState({ value: event.target.value });
   }
 
-  handleFinalizeTokens() {
-    this.props.after
+  handleFinalizeTokens(finalizedTokens) {
+    this.props.onConfirm(finalizedTokens);
   }
 
   render() {
-    if (this.props.open) {
-      return this.state.addIsOpen ? (
+    return this.props.open ? (
+      <div className="transcript">
         <form onSubmit={this.generateTokens}>
           <label>
             Copy and paste transcript here:
@@ -36,15 +42,13 @@ class AddTranscript extends React.Component {
           </label>
           <input type="submit" value="Generate Tokens"/>
         </form>
-      ) : (
-        <DisplayTokenizedTranscript
-          open={this.state.displayTokensOpen}
-          onConfirm={() => this.setState({ displayTokensOpen: false, addTranscriptOpen: true })}
-          tokens={this.state.transcriptTokens}
+        <FinalizeTokenizedTranscript
+          open={this.state.finalizeIsOpen}
+          onConfirm={finalizedTokens => this.handleFinalizeTokens(finalizedTokens)}
+          tokens={this.state.preliminaryTokens}
         />
-      );
-    }
-    return null;
+      </div>
+    ) : null;
   }
 }
 

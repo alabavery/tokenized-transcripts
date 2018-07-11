@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Tokenizer from './pages/Tokenizer';
-import Practice from './pages/Practice';
-import AddContent from './pages/AddContent';
+import TokenizePage from './pages/TokenizePage';
+import PracticePage from './pages/PracticePage';
+import AddContentPage from './pages/AddContentPage';
 
 const text = "Donc je suis avec Mina. Mina, tu es étudiante et en même temps, tu travailles comme équipière " +
   "polyvalente (1) à Burger King. Est-ce que tu peux nous dire un peu comment tu le vis, s’il te plaît?\n" +
@@ -12,20 +12,20 @@ const text = "Donc je suis avec Mina. Mina, tu es étudiante et en même temps, 
   "M : Et… Voilà.";
 
 class App extends Component {
-  state = { show: 'tokenizer' };
+  state = { show: 'addContent' };
   render() {
     return (
       <div className="App">
         <header>
           <ul id="navbar">
-            <li className="navbar-item" onClick={() => this.setState({ show: 'tokenizer' })}>Make new tokens</li>
             <li className="navbar-item" onClick={() => this.setState({ show: 'practice' })}>Practice</li>
+            <li className="navbar-item" onClick={() => this.setState({ show: 'tokenizer' })}>Make new tokens</li>
             <li className="navbar-item" onClick={() => this.setState({ show: 'addContent' })}>Add Content</li>
           </ul>
         </header>
-        {this.state.show === 'tokenizer' ? <Tokenizer text={text} /> : null }
-        {this.state.show === 'practice' ? <Practice /> : null }
-        {this.state.show === 'addContent' ? <AddContent /> : null }
+        {this.state.show === 'tokenizer' ? <TokenizePage text={text} /> : null }
+        {this.state.show === 'practice' ? <PracticePage /> : null }
+        {this.state.show === 'addContent' ? <AddContentPage /> : null }
       </div>
     );
   }

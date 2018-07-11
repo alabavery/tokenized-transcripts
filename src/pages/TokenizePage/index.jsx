@@ -1,27 +1,11 @@
 import React from 'react';
-import PhraseDisplay from '../../components/PhraseDisplay/index';
-import AudioDownload from '../../components/AudioDownload/index';
+import PhraseDisplay from '../../components/Tokenize/PhraseDisplay';
+import DownloadContent from '../../components/Tokenize/DownloadContent';
+import AudioPlayer from '../../components/Tokenize/AudioPlayer';
 import './styles.css';
 import api from '../../services/client';
 
-export default class Tokenizer extends React.Component {
-    // static propTypes = {
-    //   audio: // file or stream or something
-    //   text: // the entire thing
-    // };
-    static tokenizeText(text) {
-      const tokenized = [];
-      text.split('.').forEach(
-        sub => {
-          sub.split(',').forEach(
-            subSub => {
-              tokenized.push(subSub);
-            })
-        }
-      );
-      return tokenized;
-    }
-
+export default class TokenizePage extends React.Component {
     state = {
       phrases: ['No phrases added'],
       currentPhraseIndex: 0,
@@ -72,7 +56,7 @@ export default class Tokenizer extends React.Component {
     }
 
     componentDidMount() {
-      this.setState({ phrases: Tokenizer.tokenizeText(this.props.text) });
+      this.setState({ phrases: TokenizePage.tokenizeText(this.props.text) });
     }
 
     previousPhrase = () => {
@@ -94,24 +78,19 @@ export default class Tokenizer extends React.Component {
     slowDownAudio = () => this.audio.playbackRate > 0.4 ? this.audio.playbackRate -= 0.4 : null;
     speedUpAudio = () => this.audio.playbackRate < 1.8 ? this.audio.playbackRate += 0.4 : null;
 
-    static writeJson = tokens => {
-      const json = JSON.stringify({hereIs: "some json"});
-      document.getElementById('json-area').innerHTML = (json);
-      api.saveTokens.post(json);
-    };
-
     render() {
       return (
         <div>
-          <AudioDownload />
-          <div id="audio-wrapper">
-            <button onClick={this.slowDownAudio}>Slow Playback Rate</button>
-            <button onClick={this.speedUpAudio}>Increase Playback Rate</button>
-          </div>
+          <DownloadContent />
+          <AudioPlayer />
+          {/*<div id="audio-wrapper">*/}
+            {/*<button onClick={this.slowDownAudio}>Slow Playback Rate</button>*/}
+            {/*<button onClick={this.speedUpAudio}>Increase Playback Rate</button>*/}
+          {/*</div>*/}
           <PhraseDisplay
             phrase={this.state.phrases[this.state.currentPhraseIndex]}
           />
-          <button onClick={() => Tokenizer.writeJson(this.state.tokens)}>Generate Json</button>
+          <button onClick={() => TokenizePage.writeJson(this.state.tokens)}>Generate Json</button>
           <div id="json-area">No Json generated yet</div>
         </div>
       );
