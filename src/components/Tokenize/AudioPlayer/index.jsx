@@ -1,15 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+// {/*<div id="audio-wrapper">*/}
+// {/*<button onClick={this.slowDownAudio}>Slow Playback Rate</button>*/}
+// {/*<button onClick={this.speedUpAudio}>Increase Playback Rate</button>*/}
+// {/*</div>*/}
 
 const AudioPlayer = props => {
-  <div id="audio-wrapper">
-    <button onClick={this.slowDownAudio}>Slow Playback Rate</button>
-    <button onClick={this.speedUpAudio}>Increase Playback Rate</button>
-  </div>
-};
-
-const propTypes = {
-
+  return <div>Audio Player</div>;
 };
 
 export default AudioPlayer;

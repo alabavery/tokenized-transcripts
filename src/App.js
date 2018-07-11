@@ -12,18 +12,18 @@ const text = "Donc je suis avec Mina. Mina, tu es étudiante et en même temps, 
   "M : Et… Voilà.";
 
 class App extends Component {
-  state = { show: 'addContent' };
+  state = { show: 'tokenize' };
   render() {
     return (
       <div className="App">
         <header>
           <ul id="navbar">
             <li className="navbar-item" onClick={() => this.setState({ show: 'practice' })}>Practice</li>
-            <li className="navbar-item" onClick={() => this.setState({ show: 'tokenizer' })}>Make new tokens</li>
+            <li className="navbar-item" onClick={() => this.setState({ show: 'tokenize' })}>Make new tokens</li>
             <li className="navbar-item" onClick={() => this.setState({ show: 'addContent' })}>Add Content</li>
           </ul>
         </header>
-        {this.state.show === 'tokenizer' ? <TokenizePage text={text} /> : null }
+        {this.state.show === 'tokenize' ? <TokenizePage text={text} /> : null }
         {this.state.show === 'practice' ? <PracticePage /> : null }
         {this.state.show === 'addContent' ? <AddContentPage /> : null }
       </div>

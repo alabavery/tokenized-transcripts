@@ -1,6 +1,6 @@
 import React from 'react';
 import PhraseDisplay from '../../components/Tokenize/PhraseDisplay';
-import DownloadContent from '../../components/Tokenize/DownloadContent';
+import ChooseContent from '../../components/Tokenize/ChooseContent';
 import AudioPlayer from '../../components/Tokenize/AudioPlayer';
 import './styles.css';
 import api from '../../services/client';
@@ -56,7 +56,7 @@ export default class TokenizePage extends React.Component {
     }
 
     componentDidMount() {
-      this.setState({ phrases: TokenizePage.tokenizeText(this.props.text) });
+
     }
 
     previousPhrase = () => {
@@ -81,17 +81,7 @@ export default class TokenizePage extends React.Component {
     render() {
       return (
         <div>
-          <DownloadContent />
-          <AudioPlayer />
-          {/*<div id="audio-wrapper">*/}
-            {/*<button onClick={this.slowDownAudio}>Slow Playback Rate</button>*/}
-            {/*<button onClick={this.speedUpAudio}>Increase Playback Rate</button>*/}
-          {/*</div>*/}
-          <PhraseDisplay
-            phrase={this.state.phrases[this.state.currentPhraseIndex]}
-          />
-          <button onClick={() => TokenizePage.writeJson(this.state.tokens)}>Generate Json</button>
-          <div id="json-area">No Json generated yet</div>
+          <ChooseContent onChoice={(audio, tokens) => this.setState({ audio, tokens })} />
         </div>
       );
     }
