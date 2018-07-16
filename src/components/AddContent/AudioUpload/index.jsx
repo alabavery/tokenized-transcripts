@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
-
+import './styles.css';
 
 export default class AudioUpload extends React.Component {
   static propTypes = {
@@ -30,10 +30,12 @@ export default class AudioUpload extends React.Component {
   render() {
     if (this.props.open) {
       return this.state.addIsOpen ? (
-        <div>
+        <div className="forward-button-wrapper">
           <button
+            className="forward-button"
             type="primary"
-            onClick={() => {this.dropzone.current.open();}}>
+            onClick={() => {this.dropzone.current.open();}}
+            >
             Upload Audio
           </button>
           <Dropzone accept=".mp3,.wav" ref={this.dropzone} style={{}} onDrop={this.onUpload} />

@@ -12,7 +12,7 @@ const text = "Donc je suis avec Mina. Mina, tu es étudiante et en même temps, 
   "M : Et… Voilà.";
 
 class App extends Component {
-  state = { show: 'tokenize' };
+  state = { show: 'addContent' };
   render() {
     return (
       <div className="App">
