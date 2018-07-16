@@ -7,6 +7,7 @@ export default class TokenizePage extends React.Component {
       phrases: ['No phrases added'],
       currentPhraseIndex: 0,
       audio: null,
+      audioName: null,
       audioPlayback: 1,
       tokens: [],
     };
@@ -78,7 +79,7 @@ export default class TokenizePage extends React.Component {
     render() {
       return (
         <div>
-          <ChooseContent onDownloadContent={(audio, tokens) => this.setState({ audio, tokens })} />
+          <ChooseContent onDownloadContent={(audioName, audio, phrases) => this.setState({ audioName, audio, phrases })} />
         </div>
       );
     }

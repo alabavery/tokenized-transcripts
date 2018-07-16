@@ -18,10 +18,13 @@ export default class ChooseContent extends React.Component {
   }
 
   handleDownload = async contentId => {
-    const downloaded = await api.content.getById(contentId);
-    console.log(downloaded);
-    // this.props.onDownloadContent(downloaded.audio, downloaded.tokens);
-    console.log(`I just downloaded audio and tokens for ${contentId}`);
+    await api.content.getById(contentId).then(phrasesNameAndPathRes => {
+      const { name, phrases, path_to_audio } = phrasesNameAndPathRes.data;
+      api.content.getAudiobyPath(path_to_audio).then(audioFileRes => {
+        this.props.handleDownload(name, phrases, audioFileRes.data); // why does IDE say promise is returned?... should be resolved at this point
+      });
+    });
+    console.log("after promises");
   };
 
   render() {
