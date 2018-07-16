@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 
 const FinalizeTokenizedTranscript = props => {
-  const preliminaryTokens = props.tokens.map(token => ({ text: token, id: uuid() }));
-
-  const finalizedTokens = preliminaryTokens; // eventually have ability to change this here
+  const finalizedTokens = props.tokens; // eventually have ability to change this here
   if (props.open) {
-    const tokenElements = preliminaryTokens.map(token =>
-      <div key={token.id} className="token-text">{token.text}</div>
+    const tokenElements = finalizedTokens.map(token =>
+      <div key={uuid()} className="token-text">{token}</div>
     );
     return (
       <div>
@@ -21,7 +19,7 @@ const FinalizeTokenizedTranscript = props => {
 };
 
 FinalizeTokenizedTranscript.propTypes = {
-  tokens: PropTypes.array.isRequired,
+  tokens: PropTypes.array.isRequired, // array of strings
   open: PropTypes.bool.isRequired,
   onConfirm: PropTypes.func.isRequired,
 };

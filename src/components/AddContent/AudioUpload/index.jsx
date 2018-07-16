@@ -21,9 +21,10 @@ export default class AudioUpload extends React.Component {
   };
 
   handleNameAudio = name  => {
-    // after name audio, go straight to next step
+    // after name audio, this component won't remain in render, but it will still exist and have a state
     name = this.state.audio.name;// TODO remove this and actually let user make name
     this.props.onConfirm(this.state.audio, name);
+    this.setState({ addIsOpen: true, finalizeIsOpen: false });
   };
 
   render() {

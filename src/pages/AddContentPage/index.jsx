@@ -2,6 +2,7 @@ import React from 'react';
 import AudioUpload from '../../components/AddContent/AudioUpload';
 import AddTranscript from '../../components/AddContent/AddTranscript';
 import AddContentConfirmModal from '../../components/AddContent/AddContentConfirmModal';
+import api from '../../services/client';
 import './styles.css';
 
 export default class AddContentPage extends React.Component {
@@ -9,7 +10,7 @@ export default class AddContentPage extends React.Component {
     audio: null,
     audioFileName: 'no audio file passed',
     transcriptSnippet: 'no transcript snippet',
-    transcriptTokens: [], // Array.{ text, id }
+    transcriptTokens: [], // Array.string
     displaying: 'audio', // displayed 'sub-component'... options are 'audio', 'transcript', and 'confirm'
   };
 
@@ -20,15 +21,18 @@ export default class AddContentPage extends React.Component {
   handleTranscriptTokenGeneration = transcriptTokens => {
     console.log("AddContentPage is handling transcript token gen... first token is");
     console.log(transcriptTokens[0]);
-    this.setState({ transcriptTokens, transcriptSnippet: transcriptTokens[0].text, displaying: 'confirm' });
+    this.setState({ transcriptTokens, transcriptSnippet: transcriptTokens[0], displaying: 'confirm' });
   };
 
   handleSave = () => {
-    // const formData = new FormData();
-    // formData.append('track', files[0]);
-    // api.saveAudio.post(formData);
     // here, in one request, send the audio and the broken up transcript to server
     // something like... send(this.state.audio, this.state.audioFileName, this.state.transcriptTokens)
+    const formData = new FormData();
+    formData.append('track', this.state.audio);
+    formData.append('name', this.state.audioFileName);
+    const stringifiedTokens = JSON.stringify(this.state.transcriptTokens);
+    formData.append('transcriptTokens', stringifiedTokens);
+    api.content.post(formData);
     this.setState({ displaying: 'audio' }); // go back to the beginning
   };
 

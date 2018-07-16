@@ -1,9 +1,6 @@
 import React from 'react';
-import PhraseDisplay from '../../components/Tokenize/PhraseDisplay';
 import ChooseContent from '../../components/Tokenize/ChooseContent';
-import AudioPlayer from '../../components/Tokenize/AudioPlayer';
 import './styles.css';
-import api from '../../services/client';
 
 export default class TokenizePage extends React.Component {
     state = {
@@ -17,17 +14,17 @@ export default class TokenizePage extends React.Component {
     constructor(props) {
       super(props);
       this.audio = null;
-      document.onkeydown = e => {
-        const key = e.keyCode ? e.keyCode : e.which;
-        if (key == 32) { // space
-          this.playPauseAudio();
-        } else if (key == 39) { // forward
-          this.recordToken();
-          this.nextPhrase();
-        } else if (key == 37) { //backward
-          this.previousPhrase();
-        }
-      };
+      // document.onkeydown = e => {
+      //   const key = e.keyCode ? e.keyCode : e.which;
+      //   if (key == 32) { // space
+      //     this.playPauseAudio();
+      //   } else if (key == 39) { // forward
+      //     this.recordToken();
+      //     this.nextPhrase();
+      //   } else if (key == 37) { //backward
+      //     this.previousPhrase();
+      //   }
+      // };
     }
     
     recordToken() {
@@ -81,7 +78,7 @@ export default class TokenizePage extends React.Component {
     render() {
       return (
         <div>
-          <ChooseContent onChoice={(audio, tokens) => this.setState({ audio, tokens })} />
+          <ChooseContent onDownloadContent={(audio, tokens) => this.setState({ audio, tokens })} />
         </div>
       );
     }

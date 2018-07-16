@@ -1,0 +1,12 @@
+/* choose-content is the top level in this component */
+.choose-content {
+    background-color: green;
+}
+
+.choice-name {
+    background-color: red;
+}
+
+.choice-snippet {
+    background-color: blue;
+}
