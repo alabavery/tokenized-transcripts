@@ -18,9 +18,9 @@ class App extends Component {
       <div className="App">
         <header>
           <ul id="navbar">
-            <li className="navbar-item" onClick={() => this.setState({ show: 'practice' })}>Practice</li>
-            <li className="navbar-item" onClick={() => this.setState({ show: 'tokenize' })}>Make new tokens</li>
-            <li className="navbar-item" onClick={() => this.setState({ show: 'addContent' })}>Add Content</li>
+            <li className="navbar-item" onClick={() => this.setState({ show: 'practice' })}><p>Practice</p></li>
+            <li className="navbar-item" onClick={() => this.setState({ show: 'tokenize' })}><p>Make new tokens</p></li>
+            <li className="navbar-item" onClick={() => this.setState({ show: 'addContent' })}><p>Add Content</p></li>
           </ul>
         </header>
         {this.state.show === 'tokenize' ? <TokenizePage text={text} /> : null }
