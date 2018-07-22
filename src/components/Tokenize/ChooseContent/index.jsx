@@ -6,37 +6,41 @@ import './styles.css';
 export default class ChooseContent extends React.Component {
   static propTypes = { onDownloadContent: PropTypes.func.isRequired };
 
-  state = { choices: [] };
+  state = { previews: [] };
   componentDidMount() {
     console.log("componentDidMount");
     const self = this;
-    api.content.getPreviews().then(res => {
+    api.audio.getPreviews().then(res => {
         console.log("Here we are", res);
-        self.setState({ choices: res.data.previews })
+        self.setState({ previews: res.data.previews })
       },
     );
   }
 
   handleDownload = async contentId => {
-    const downloaded = await api.content.getById(contentId);
-    console.log(downloaded);
-    // this.props.onDownloadContent(downloaded.audio, downloaded.tokens);
-    console.log(`I just downloaded audio and tokens for ${contentId}`);
+    await api.content.getById(contentId).then(phrasesNameAndPathRes => {
+      const { name, phrases, path_to_audio } = phrasesNameAndPathRes.data;
+      console.log(phrasesNameAndPathRes.data);
+      api.content.getAudiobyPath(path_to_audio).then(audioFileRes => {
+        this.props.handleDownload(name, phrases, audioFileRes.data); // why does IDE say promise is returned?... should be resolved at this point
+      });
+    });
+    console.log("after promises");
   };
 
   render() {
-    console.log("\n\nthis.state.choices", this.state.choices);
-    const choiceElements = this.state.choices.map(choice => (
-        <div key={choice.id} id={choice.id} className="choice" onClick={e => this.handleDownload(e.currentTarget.id)}>
-          <span className="choice-name">{choice.name}</span><span className="choice-snippet">{choice.snippet}</span>
+    console.log("\n\nthis.state.choices", this.state.previews);
+    const previewElements = this.state.previews.map(preview => (
+        <div key={preview.id} id={preview.id} className="choice" onClick={e => this.handleDownload(e.currentTarget.id)}>
+          <span className="preview-name">{preview.name}</span><span className="preview-snippet">{preview.snippet}</span>
         </div>
       ),
     );
     return (
       <div className="choose-content">
         <h3>Choose the audio you want to work with</h3>
-        <div className="choices">
-          {choiceElements}
+        <div className="previews">
+          {previewElements}
         </div>
      </div>
     );
