@@ -31,13 +31,17 @@ export default class AudioUpload extends React.Component {
     if (this.props.open) {
       return this.state.addIsOpen ? (
         <Fragment>
-          <button
-            className="forward-button"
-            type="primary"
-            onClick={() => {this.dropzone.current.open();}}
-            >
-            Upload Audio
-          </button>
+          <div className="button-container">
+            <button className="back-button">Back</button>
+            <button
+              className="forward-button"
+              type="primary"
+              onClick={() => {this.dropzone.current.open();}}
+              >
+              Upload Audio
+            </button>
+
+          </div>
           <Dropzone accept=".mp3,.wav" ref={this.dropzone} style={{}} onDrop={this.onUpload} />
         </Fragment>
       ) : (
