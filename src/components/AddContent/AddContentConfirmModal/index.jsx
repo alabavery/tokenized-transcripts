@@ -8,7 +8,10 @@ const AddContentConfirmModal = props => {
         <h3>Upload audio and transcript phrases below?</h3>
         Audio file name: {props.audioFileName} <br />
         Transcript that begins: {props.transcriptSnippet}
-        <button onClick={props.onConfirm}>Confirm</button>
+        <div className="button-container">
+          <button className="back-button">Back</button>
+          <button className="forward-button" onClick={props.onConfirm}>Confirm</button>
+        </div>
       </div>
     );
   }
