@@ -48,41 +48,21 @@ export default class AddContentPage extends React.Component {
       <div className="add-content-container">
         <div className="copy-container">
           <p>In the campaign to revise Congressional instructions, many Americans formally expressed their support for separation from Great Britain in what were effectively state and local declarations of independence. Historian Pauline Maier identifies more than ninety such declarations that were issued throughout the Thirteen Colonies from April to July 1776. </p>
-          <div className="button-container">
-            <button className="back-button">Back</button>
-            <AudioUpload
+          <AudioUpload
             open={displaying==='audio'}
             onConfirm={(audio, audioFileName) => this.handleAudioUpload(audio, audioFileName)}
-            />
-         </div>
-            <AddTranscript
-              open={displaying==='transcript'}
-              onConfirm={tokens => this.handleTranscriptTokenGeneration(tokens)}
-            />
-            <AddContentConfirmModal
-              open={displaying==='confirm'}
-              audioFileName={this.state.audioFileName}
-              transcriptSnippet={this.state.transcriptSnippet}
-              onConfirm={this.handleSave}
-            />
-            </div>
-        <div className="button-container">
-          <button className="back-button">Back</button>
-          <AudioUpload
-          open={displaying==='audio'}
-          onConfirm={(audio, audioFileName) => this.handleAudioUpload(audio, audioFileName)}
+          />
+          <AddTranscript
+            open={displaying==='transcript'}
+            onConfirm={tokens => this.handleTranscriptTokenGeneration(tokens)}
+          />
+          <AddContentConfirmModal
+            open={displaying==='confirm'}
+            audioFileName={this.state.audioFileName}
+            transcriptSnippet={this.state.transcriptSnippet}
+            onConfirm={this.handleSave}
           />
         </div>
-        <AddTranscript
-          open={displaying==='transcript'}
-          onConfirm={tokens => this.handleTranscriptTokenGeneration(tokens)}
-        />
-        <AddContentConfirmModal
-          open={displaying==='confirm'}
-          audioFileName={this.state.audioFileName}
-          transcriptSnippet={this.state.transcriptSnippet}
-          onConfirm={this.handleSave}
-        />
       </div>
     )
   }
