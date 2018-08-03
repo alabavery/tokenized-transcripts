@@ -42,6 +42,7 @@ export default class AddContentPage extends React.Component {
     return (
       <div className="add-content-container">
         <div className="copy-container">
+            <p>How's about you upload some audio, my dude?</p>
           <AudioUpload
             open={displaying==='audio'}
             onConfirm={(audio, audioFileName) => this.handleAudioUpload(audio, audioFileName)}
