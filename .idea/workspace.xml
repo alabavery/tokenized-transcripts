@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="028ea765-e1a8-46c7-9e2f-412bd05449bd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Tokenize/Tokenizer/Phrase/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Tokenize/Tokenizer/Phrase/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Tokenize/Tokenizer/UserResolveWords/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Tokenize/Tokenizer/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tokenize/ChooseContent/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tokenize/ChooseContent/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TokenizePage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TokenizePage/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/client.js" afterDir="false" />
-    </list>
+    <list default="true" id="028ea765-e1a8-46c7-9e2f-412bd05449bd" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -23,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/TokenizePage/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -44,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Tokenize/Tokenizer/UserResolveWords/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -352,14 +343,15 @@
       <workItem from="1533172017908" duration="10166000" />
       <workItem from="1533240765373" duration="611000" />
       <workItem from="1533241943580" duration="9000" />
+      <workItem from="1533254897968" duration="374000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99008000" />
+    <option name="totallyTimeSpent" value="99382000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-260" width="1920" height="1080" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -724,13 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/TokenizePage/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Tokenize/Tokenizer/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
@@ -755,6 +740,13 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/TokenizePage/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
         </state>
       </provider>
     </entry>
