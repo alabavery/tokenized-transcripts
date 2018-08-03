@@ -48,7 +48,7 @@ export default class AudioUpload extends React.Component {
         <div>
           <div className="name-upload">
             Name your audio file: placeholder need to add input for this
-            <button onClick={this.handleNameAudio}>Name and move to next step</button>
+            <button className="forward-button" onClick={this.handleNameAudio}>Name and move to next step</button>
           </div>
         </div>
       );

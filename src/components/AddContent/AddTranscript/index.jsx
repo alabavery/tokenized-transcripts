@@ -38,9 +38,9 @@ class AddTranscript extends React.Component {
         <form onSubmit={this.generateTokens}>
           <label>
             Copy and paste transcript here:
-            <input className="transcript-input" type="text" value={this.state.value} onChange={this.handleChange}/>
+            <textarea rows="15" cols="100" className="transcript-input" type="text" value={this.state.value} onChange={this.handleChange}/>
           </label>
-          <input type="submit" value="Generate Tokens"/>
+          <input className="forward-button" type="submit" value="Generate Tokens"/>
         </form>
         <FinalizeTokenizedTranscript
           open={this.state.finalizeIsOpen}

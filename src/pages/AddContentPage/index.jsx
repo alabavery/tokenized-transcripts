@@ -38,16 +38,11 @@ export default class AddContentPage extends React.Component {
 
   render() {
     const { displaying } = this.state;
-    console.log(`
-      rendering AddContent...
-      \nthis.state.audio is not null? -- ${this.state.audio !== null}
-      \nthis.state.audioFileName is -- ${this.state.audioFileName}
-      \nthis.state.transcriptTokens is empty? -- ${this.state.transcriptTokens.length === 0}
-    `);
+
     return (
       <div className="add-content-container">
         <div className="copy-container">
-          <p>In the campaign to revise Congressional instructions, many Americans formally expressed their support for separation from Great Britain in what were effectively state and local declarations of independence. Historian Pauline Maier identifies more than ninety such declarations that were issued throughout the Thirteen Colonies from April to July 1776. </p>
+            <p>How's about you upload some audio, my dude?</p>
           <AudioUpload
             open={displaying==='audio'}
             onConfirm={(audio, audioFileName) => this.handleAudioUpload(audio, audioFileName)}

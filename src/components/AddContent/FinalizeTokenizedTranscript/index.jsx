@@ -11,7 +11,7 @@ const FinalizeTokenizedTranscript = props => {
     return (
       <div>
         <div className="tokens-container">{tokenElements}</div>
-        <button onClick={() => props.onConfirm(finalizedTokens)}>Confirm</button>
+        <button className="forward-button" onClick={() => props.onConfirm(finalizedTokens)}>Confirm</button>
       </div>
     );
   }
