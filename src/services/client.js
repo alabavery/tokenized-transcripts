@@ -16,12 +16,19 @@ const api = {
   },
   audio: {
     getPreviews: () => client.get('/audio/previews'),
-    getFileByPath: pathToAudioFile => client.get(`/audio/fileByPath?path=${pathToAudioFile}`)
+    setFileSrc: pathToAudioFile => client.post(`/audio/fileByPath?path=${pathToAudioFile}`),
   },
   phrases: {
-    getByOriginalAudioId: originalAudioId => client.get(`/phrase/byOriginalAudioId?id=${originalAudioId}`),
+    getByOriginalAudioId: originalAudioId => client.get(`/phrase/byOriginalAudioId/${originalAudioId}`),
   },
-
+  tokens: {
+    post: (tokensWithPhraseIds, audioId) => {
+      client.post('/token', {
+        tokensWithPhraseIds: JSON.stringify(tokensWithPhraseIds),
+        audioId,
+      });
+    },
+  },
 };
 
 export default api;
